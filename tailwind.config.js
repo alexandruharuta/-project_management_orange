@@ -8,6 +8,8 @@ export default {
       dark: "#131927",
       current: "currentColor",
       blue: "#CFE0F0",
+      gray: "#999999",
+      white: "#FFFFFF",
     },
   },
   plugins: [],
