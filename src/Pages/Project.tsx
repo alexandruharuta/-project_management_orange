@@ -30,7 +30,7 @@ export default function Project() {
           <p>Priority</p>
 
           <svg
-            class="w-4 h-4 text-gray gray:text-white"
+            className="w-4 h-4 text-gray gray:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -47,7 +47,7 @@ export default function Project() {
         </div>
       </div>
       {/*  */}
-      <div className="flex items-center pt-2 ml-40 justify-between font-medium text-opacity-2 border-b p-2 border-b-gray">
+      <div className="flex items-center pt-2 justify-between font-medium text-opacity-2 border-b p-2 border-b-gray">
         <div className="flex items-center">
           <svg
             className="w-4 h-4 text-bluetask dark:text-white"
@@ -91,7 +91,7 @@ export default function Project() {
               />
             </svg>
 
-            <p className>High</p>
+            <p>High</p>
           </div>
 
           <svg

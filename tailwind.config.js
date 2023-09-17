@@ -11,6 +11,7 @@ export default {
       gray: "#999999",
       white: "#FFFFFF",
       white10: "rgba(255, 255, 255, .1)",
+      dark: "#000",
       dark10: "rgba(0, 0, 0, .1)",
       dark50: "rgba(0, 0, 0, .5)",
       sky: "#0060F0",
