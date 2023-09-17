@@ -1,15 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
     colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      'dark': '#131927',
+      transparent: "transparent",
+      dark: "#131927",
+      current: "currentColor",
+      blue: "#CFE0F0",
     },
   },
   plugins: [],
-}
-
+};
