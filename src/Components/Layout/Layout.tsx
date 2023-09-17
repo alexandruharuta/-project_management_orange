@@ -4,8 +4,11 @@ import Sidebar from "./Sidebar"
 export default function Layout() {
     return (
         <>
-            <Navbar></Navbar>
-            <Sidebar></Sidebar>
+            <div className="flex items-start">
+                <Sidebar></Sidebar>
+                <Navbar></Navbar>
+
+            </div>
         </>
     )
 }

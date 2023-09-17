@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Sidebar() {
     return (
-        <header>
-            <h1>Sidebar</h1>
-        </header>
+        <div className="bg-dark w-80 min-h-screen">
+            <h1>Navbar</h1>
+        </div>
     )
 }

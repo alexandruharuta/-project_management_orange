@@ -4,6 +4,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {},
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'dark': '#131927',
+    },
   },
   plugins: [],
 }
+
