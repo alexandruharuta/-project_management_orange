@@ -5,7 +5,7 @@ export default {
     extend: {},
     colors: {
       transparent: "transparent",
-      dark: "#131927",
+      darkBlue: "#111625",
       current: "currentColor",
       blue: "#CFE0F0",
       gray: "#999999",

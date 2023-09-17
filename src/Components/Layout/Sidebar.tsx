@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Sidebar() {
     return (
-        <div className="bg-dark w-80 min-h-screen flex flex-col justify-between">
+        <div className="bg-darkBlue w-80 min-h-screen flex flex-col justify-between">
             <div>
                 <div className="border-b border-white10 h-16 px-4 flex items-center">
                     <p className="text-white">Name Surname</p>
