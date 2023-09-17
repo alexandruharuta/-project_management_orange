@@ -10,6 +10,8 @@ export default {
       blue: "#CFE0F0",
       gray: "#999999",
       white: "#FFFFFF",
+      sky: "#0060F0",
+      indigo: "#405292",
     },
   },
   plugins: [],
