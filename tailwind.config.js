@@ -8,6 +8,8 @@ export default {
       dark: "#131927",
       current: "currentColor",
       blue: "#CFE0F0",
+      white: "#fff",
+      whitelight: 'rgba(255, 255, 255, .1)'
     },
   },
   plugins: [],
