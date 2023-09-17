@@ -1,10 +1,10 @@
 export default function Project() {
   return (
-    <div>
-      <div className="flex items-center pt-40 ml-20 justify-between text-gray border-b p-2 border-b-gray">
+    <div className="p-10">
+      <div className="flex items-center justify-between text-gray border-b border-b-gray p-4">
         <div className="flex items-center">
           <svg
-            class="w-3 h-3 text-gray gray:text-white"
+            className="w-3 h-3 text-gray gray:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

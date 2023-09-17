@@ -4,7 +4,7 @@ export default function Sidebar() {
     return (
         <div className="bg-dark w-80 min-h-screen flex flex-col justify-between">
             <div>
-                <div className="p-6 border-b border-whitelight">
+                <div className="border-b border-white10 h-16 px-4 flex items-center">
                     <p className="text-white">Name Surname</p>
                 </div>
                 <div className="p-6 border-b border-whitelight">
