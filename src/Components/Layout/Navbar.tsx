@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar() {
     return (
-        <div className="bg-sky-100 p-8 flex items-center">
+        <div className="bg-sky-100 p-8 flex items-center border-b">
             <img className="w-8" src="src/assets/Group 1.jpg" alt="" />
             <p className="ml-5">Project Name</p>
             <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
