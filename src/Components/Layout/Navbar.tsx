@@ -2,8 +2,8 @@ export default function Navbar() {
   return (
     <div className="flex justify-between border-b w-full p-4">
       <div className="bg-sky-100 flex items-center">
-        <div className="w-10 h-10 bg-blue rounded-lg"></div>
-        <p className="ml-5">Project Name</p>
+        <div className="w-6 h-6 bg-blue rounded-lg"></div>
+        <p className="ml-3">Project Name</p>
 
         <svg
           className="w-6 h-6 text-gray-800 dark:text-white ml-2"
@@ -23,18 +23,18 @@ export default function Navbar() {
 
       <div className="flex items-center ">
         <svg
-          className="w-4 h-4 text-gray-800 dark:text-white"
+          className="w-6 h-6 text-gray-800 dark:text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          viewBox="0 0 20 20"
+          viewBox="0 0 18 18"
         >
           <path
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M10 5.757v8.486M5.757 10h8.486M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            d="M9 1v16M1 9h16"
           />
         </svg>
         <button className="ml-1">Create</button>
