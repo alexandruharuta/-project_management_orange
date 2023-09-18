@@ -1,16 +1,22 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 interface IButton {
-    children: ReactNode;
-    className: string;
-    onClick?: () => void;
+  children: ReactNode;
+  className?: string;
+  onClick?: () => void;
+  image?: string;
 }
 
-
-export default function Button({ children, className, onClick }: IButton) {
-    return (
-        <button className={className} onClick={onClick}>
-            {children}
-        </button>
-    )
+export default function Button({
+  children,
+  className,
+  onClick,
+  image,
+}: IButton) {
+  return (
+    <button className={className} onClick={onClick}>
+      {image}
+      {children}
+    </button>
+  );
 }
