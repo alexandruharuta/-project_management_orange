@@ -35,6 +35,8 @@ export default function Register() {
           {test ? "Sign up" : "Log in"}
         </Button>
       </div>
+
+      <div></div>
     </>
   );
 }
