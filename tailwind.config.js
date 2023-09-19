@@ -6,6 +6,7 @@ export default {
     colors: {
       transparent: "transparent",
       darkBlue: "#111625",
+      darkerBlue: "#101D42",
       current: "currentColor",
       blue: "#CFE0F0",
       gray: "#999999",
