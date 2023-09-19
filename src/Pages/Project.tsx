@@ -1,6 +1,8 @@
 export default function Project() {
   return (
-    <div className="p-10">
+    <div className="px-16 py-16">
+      <p className="text-2xl font-medium">Project Name</p>
+      <input type="text" placeholder="Add description" />
       <div className="flex items-center justify-between text-gray border-b border-b-gray p-4">
         <div className="flex items-center">
           <svg
