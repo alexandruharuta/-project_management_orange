@@ -1,27 +1,28 @@
-import React from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+import { BiSolidBookmark } from "react-icons/bi";
+import { RiHome2Fill } from "react-icons/ri";
 
-export default function Sidebar() {
-    return (
-        <div className="bg-darkBlue w-80 min-h-screen flex flex-col justify-between">
-            <div>
-                <div className="border-b border-white10 h-16 px-4 flex items-center">
-                    <p className="text-white">Name Surname</p>
-                </div>
-                <div className="p-6 border-b border-whitelight">
-                    <a href="" className="text-white">Home</a>
-                </div>
-                <div className="p-6">
-                    <a href="" className="text-white block mb-3">Project Name 1</a>
-                    <a href="" className="text-white block mb-3">Project Name 2</a>
-                    <a href="" className="text-white block mb-3">Project Name 3</a>
-                    <a href="" className="text-white block mb-3">Project Name 4</a>
-
-                </div>
-            </div>
-            <div>
-                Name
-            </div>
-
+export const Sidebar = () => {
+  return (
+    <aside className="min-h-screen w-1/5 bg-darkerBlue text-white">
+        <div className="mx-6 my-6">
+            <AiOutlineMenu className="cursor-pointer hover:text-gray ease-in-out duration-500" style={{ fontSize: '25px' }}/>
         </div>
-    );
+        <div className="flex w-full my-4">
+            <img src="src/assets/profile-user.png" alt="pfp" className="w-20 h-20 mx-auto" />
+        </div>
+        <div className="border-t border-gray mx-6 my-4 flex justify-start items-center">
+            <h1 className="flex items-center mt-4 rounded-full hover:bg-darkBlueHover cursor-pointer w-full py-2 px-3 ease-in-out duration-500"><RiHome2Fill className="mr-2"/>Home</h1>
+        </div>
+        <div className="mx-6 border-t border-gray">
+            <h1 className="flex items-center text-gray mt-5 mb-2">Projects</h1>
+            <ul className="my-2 space-y-2">
+                <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500"><BiSolidBookmark style={{ color: 'lightred' }} className="mr-1"/>Proiect 1</li>
+                <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500"><BiSolidBookmark style={{ color: 'lightblue' }} className="mr-1"/>Proiect 2</li>
+                <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500"><BiSolidBookmark style={{ color: 'lightgreen' }} className="mr-1"/>Proiect 3</li>
+            </ul>
+        </div>
+        
+    </aside>
+  )
 }

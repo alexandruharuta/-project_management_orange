@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
 import Project from "../../Pages/Project";
+import { Sidebar } from "./Sidebar";
 
 export default function Layout() {
   return (
