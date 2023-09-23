@@ -2,7 +2,8 @@ import "./App.css";
 import Layout from "./Components/Layout/Layout";
 import LoginRegister from "./Components/LandingPage/LandingPage";
 import LandingPage from "./Components/LandingPage/LandingPage";
-import MyTasks from "./Components/MyTasks/MyTasks";
+import HomeLayout from "./Components/Dashboard/HomeLayout";
+import MyTasksLayout from "./Components/MyTasks/MyTasksLayout";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <LandingPage />
       <Layout />
       <LoginRegister />
-      <MyTasks />
+      <MyTasksLayout />
+      <HomeLayout />
     </>
   );
 }

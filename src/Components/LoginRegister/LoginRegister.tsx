@@ -54,7 +54,7 @@ export default function Register() {
             onSubmit={handleSubmit((data) => {
               console.log(data);
               if (!Object.keys(errors).length) {
-                navigate("/project");
+                navigate("/home");
               }
             })}
           >
@@ -70,15 +70,19 @@ export default function Register() {
             />
             <div className="text-red">
               {errors.name?.type === "required" && (
-                <small>Name is required.</small>
+                <small className="text-xs">Name is required.</small>
               )}
 
               {errors.name?.type === "minLength" && (
-                <small>The Name should have at least 2 characters.</small>
+                <small className="text-xs">
+                  The Name should have at least 2 characters.
+                </small>
               )}
 
               {errors.name?.type === "maxLength" && (
-                <small>The Name should have at most 30 characters.</small>
+                <small className="text-xs">
+                  The Name should have at most 30 characters.
+                </small>
               )}
             </div>
 
@@ -102,7 +106,7 @@ export default function Register() {
             {errors.email && <span>{errors?.email.message}</span>}
 
             {errors.email?.type === "required" && (
-              <small className="text-red">Email is required.</small>
+              <small className="text-red text-xs">Email is required.</small>
             )}
 
             <input
@@ -118,15 +122,19 @@ export default function Register() {
 
             <div className="text-red">
               {errors.password?.type === "required" && (
-                <small>Password is required.</small>
+                <small className="text-xs">Password is required.</small>
               )}
 
               {errors.password?.type === "minLength" && (
-                <small>The Password should have at least 6 characters.</small>
+                <small className="text-xs">
+                  The Password should have at least 6 characters.
+                </small>
               )}
 
               {errors.password?.type === "maxLength" && (
-                <small>The Password should have at most 16 characters.</small>
+                <small className="text-xs">
+                  The Password should have at most 16 characters.
+                </small>
               )}
             </div>
 
@@ -146,7 +154,7 @@ export default function Register() {
                   placeholder="Confirm Password"
                 />{" "}
                 {errors.password?.type === "required" && (
-                  <small className="text-red">
+                  <small className="text-red text-xs">
                     Confirm Password is required.
                   </small>
                 )}{" "}

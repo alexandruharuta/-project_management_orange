@@ -22,10 +22,13 @@ export const Sidebar = () => {
         />
       </div>
       <div className="border-t border-gray mx-6 my-4 flex justify-start items-center grid">
-        <h1 className="flex items-center mt-4 rounded-full hover:bg-darkBlueHover cursor-pointer w-full py-2 px-3 ease-in-out duration-500">
+        <Button
+          className="flex items-center mt-4 rounded-full hover:bg-darkBlueHover cursor-pointer w-full py-2 px-3 ease-in-out duration-500"
+          onClick={() => navigate("/home")}
+        >
           <RiHome2Fill className="mr-2" />
           Home
-        </h1>
+        </Button>
         <Button
           className="flex items-center mt-4 rounded-full hover:bg-darkBlueHover cursor-pointer w-full py-2 px-3 ease-in-out duration-500"
           onClick={() => navigate("/mytasks")}
@@ -36,10 +39,13 @@ export const Sidebar = () => {
       <div className="mx-6 border-t border-gray">
         <h1 className="flex items-center text-gray mt-5 mb-2">Projects</h1>
         <ul className="my-2 space-y-2">
-          <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
+          <Button
+            className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500"
+            onClick={() => navigate("/project")}
+          >
             <BiSolidBookmark style={{ color: "lightred" }} className="mr-1" />
             Project 1
-          </li>
+          </Button>
           <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
             <BiSolidBookmark style={{ color: "lightblue" }} className="mr-1" />
             Project 2

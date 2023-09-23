@@ -5,7 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginRegister from "./Components/LoginRegister/LoginRegister.tsx";
 import Layout from "./Components/Layout/Layout.tsx";
 import LandingPage from "./Components/LandingPage/LandingPage.tsx";
-import MyTasks from "./Components/MyTasks/MyTasks.tsx";
+
+import HomeLayout from "./Components/Dashboard/HomeLayout.tsx";
+import MyTasksLayout from "./Components/MyTasks/MyTasksLayout.tsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
     path: "register",
     element: <LoginRegister />,
   },
+  {
+    path: "/home",
+    element: <HomeLayout />,
+  },
 
   {
     path: "project",
@@ -24,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/mytasks",
-    element: <MyTasks />,
+    element: <MyTasksLayout />,
   },
 ]);
 
