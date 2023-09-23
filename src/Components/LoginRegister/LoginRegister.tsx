@@ -21,7 +21,7 @@ export default function Register() {
     },
   });
 
-  console.log(Object.keys(errors));
+  // console.log(Object.keys(errors));
 
   return (
     <div className="bg-gray1 h-screen flex items-center justify-between">
@@ -50,7 +50,7 @@ export default function Register() {
           </div>
 
           <form
-            className="grid pt-10 gap-5"
+            className="grid pt-10"
             onSubmit={handleSubmit((data) => {
               console.log(data);
               if (!Object.keys(errors).length) {
@@ -60,29 +60,50 @@ export default function Register() {
           >
             <input
               {...register("name", {
-                maxLength: 20,
+                maxLength: 30,
                 minLength: 2,
                 required: true,
               })}
-              className="border-b text-sm  outline-none placeholder:opacity-60  "
+              className=" border-b text-sm  outline-none placeholder:opacity-60  "
               type="text"
               placeholder="Name"
             />
+            <div className="text-red">
+              {errors.name?.type === "required" && (
+                <small>Name is required.</small>
+              )}
+
+              {errors.name?.type === "minLength" && (
+                <small>The Name should have at least 2 characters.</small>
+              )}
+
+              {errors.name?.type === "maxLength" && (
+                <small>The Name should have at most 30 characters.</small>
+              )}
+            </div>
 
             <input
               {...register("email", {
                 pattern: {
                   // eslint-disable-next-line no-useless-escape
                   value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-                  message: "Enter a valid email.",
+                  message: (
+                    <span className="text-red text-xs">
+                      Enter a valid email.{" "}
+                    </span>
+                  ),
                 },
                 required: true,
               })}
-              className="border-b text-sm outline-none placeholder:opacity-60 message:text-red"
+              className="message:text-red mt-5 border-b text-sm outline-none placeholder:opacity-60 "
               type="email"
               placeholder="Email"
             />
             {errors.email && <span>{errors?.email.message}</span>}
+
+            {errors.email?.type === "required" && (
+              <small className="text-red">Email is required.</small>
+            )}
 
             <input
               {...register("password", {
@@ -90,16 +111,29 @@ export default function Register() {
                 minLength: 6,
                 required: true,
               })}
-              className="border-b text-sm outline-none placeholder:opacity-60"
+              className="mt-5 border-b text-sm outline-none placeholder:opacity-60"
               type="password"
               placeholder="Password"
             />
+
+            <div className="text-red">
+              {errors.password?.type === "required" && (
+                <small>Password is required.</small>
+              )}
+
+              {errors.password?.type === "minLength" && (
+                <small>The Password should have at least 6 characters.</small>
+              )}
+
+              {errors.password?.type === "maxLength" && (
+                <small>The Password should have at most 16 characters.</small>
+              )}
+            </div>
+
             {test && (
               <>
                 <input
                   {...register("confirm_password", {
-                    maxLength: 16,
-                    minLength: 6,
                     required: true,
                     validate: (val: string) => {
                       if (watch("password") != val) {
@@ -107,10 +141,15 @@ export default function Register() {
                       }
                     },
                   })}
-                  className="border-b text-sm outline-none placeholder:opacity-60"
+                  className="mt-5 border-b text-sm outline-none placeholder:opacity-60"
                   type="password"
                   placeholder="Confirm Password"
                 />{" "}
+                {errors.password?.type === "required" && (
+                  <small className="text-red">
+                    Confirm Password is required.
+                  </small>
+                )}{" "}
               </>
             )}
 
