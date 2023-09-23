@@ -153,6 +153,11 @@ export default function Register() {
               </>
             )}
 
+            <Button className="italic text-xs mt-2 flex start">
+              {" "}
+              Forgot password?
+            </Button>
+
             <Button
               className="bg-dark text-white rounded-full mt-10 pt-2 pb-2"
               // image={test ? "^" : "$"}
