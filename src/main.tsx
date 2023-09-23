@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginRegister from "./Components/LoginRegister/LoginRegister.tsx";
-import Layout from "./Components/Layout/Layout.tsx";
-import LandingPage from "./Components/LandingPage/LandingPage.tsx";
-import MyTasks from "./Components/MyTasks/MyTasks.tsx";
+
+import LoginRegister from "./components/login-register/LoginRegister.tsx";
+import Layout from "./components/layout/Layout.tsx";
+import LandingPage from "./pages/landing-page/LandingPage.tsx";
+import MyTasks from "./components/my-tasks/MyTasks.tsx";
+
+import "./index.css";
 
 const router = createBrowserRouter([
   {

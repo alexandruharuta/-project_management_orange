@@ -1,8 +1,8 @@
 import "./App.css";
-import Layout from "./Components/Layout/Layout";
-import LoginRegister from "./Components/LandingPage/LandingPage";
-import LandingPage from "./Components/LandingPage/LandingPage";
-import MyTasks from "./Components/MyTasks/MyTasks";
+import Layout from "./components/layout/Layout";
+import LoginRegister from "./pages/landing-page/LandingPage";
+import LandingPage from "./pages/landing-page/LandingPage";
+import MyTasks from "./components/my-tasks/MyTasks";
 
 function App() {
   return (
