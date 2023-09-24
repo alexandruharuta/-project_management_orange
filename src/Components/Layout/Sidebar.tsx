@@ -1,6 +1,7 @@
 import { AiOutlineMenu } from "react-icons/ai";
 import { BiSolidBookmark } from "react-icons/bi";
 import { RiHome2Fill } from "react-icons/ri";
+import { FaListAlt } from "react-icons/fa";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 
@@ -37,6 +38,7 @@ export const Sidebar = () => {
             onClick={() => navigate("/mytasks")}
           >
             <li className="flex items-center mt-4 rounded-full hover:bg-darkBlueHover cursor-pointer w-full py-2 px-3 ease-in-out duration-500">
+              <FaListAlt className="mr-2" />
               My Tasks
             </li>
           </Button>
