@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../Button";
+// import Button from "../Button";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -7,9 +7,9 @@ export default function LandingPage() {
   return (
     <div>
       <p>Landing Page</p>
-      <Button className="bg-blue" onClick={() => navigate("register")}>
+      {/* <Button className="bg-blue" onClick={() => navigate("register")}>
         Get Started
-      </Button>
+      </Button> */}
     </div>
   );
 }
