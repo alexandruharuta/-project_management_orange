@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
-    <div className="flex justify-between border-b border-dark10 w-full h-16 px-4">
-      <div className="bg-sky-100 flex items-center">
+    <div className="flex justify-between border-b border-dark10 w-full h-16 px-4 bg-stone-100">
+      <div className="flex items-center">
         <div className="w-7 h-7 bg-blue rounded-lg font-semibold text-lg text-indigo flex align-center justify-center">
           P
         </div>
@@ -24,7 +24,7 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center ">
-        <button className="flex items-center rounded-3xl px-4 py-1.5 bg-blue">
+        <button className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0">
           <p className="ml-1 text-sm text-indigo">Create</p>
           <svg
             className="w-2 h-2 text-gray-800 ml-2 text-indigo"
@@ -80,7 +80,7 @@ export default function Navbar() {
           </svg>
         </button>
         <div className="flex items-center">
-          <button className="w-6 h-6 bg-blue rounded-full bg-gray text-white text-xs">
+          <button className="w-6 h-6 bg-blue0 rounded-full bg-gray0 text-white0 text-xs">
             N
           </button>
           <svg

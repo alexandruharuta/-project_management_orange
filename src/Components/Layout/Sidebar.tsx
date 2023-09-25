@@ -1,4 +1,3 @@
-import { AiOutlineMenu } from "react-icons/ai";
 import { BiSolidBookmark } from "react-icons/bi";
 import { RiHome2Fill } from "react-icons/ri";
 import { FaListAlt } from "react-icons/fa";
@@ -8,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export const Sidebar = () => {
   const navigate = useNavigate();
   return (
-    <aside className="min-h-screen w-1/5 bg-darkerBlue text-white">
+    <aside className="min-h-screen w-1/5 bg-darkerBlue text-white0">
       <div className="flex w-full my-6">
         <img
           src="src/assets/profile-user.png"
