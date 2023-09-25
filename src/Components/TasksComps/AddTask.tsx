@@ -6,9 +6,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 const AddTask = () => {
     const [dueDate, setDueDate] = useState<Date | null>(null);
     const currentDate = new Date();
+    const handleSubmit = (e:any) => {
+        e.preventDefault();
+    }
 
     return (
-      <form>
+      <form onSubmit={handleSubmit} className='border px-12 py-6 bg-gray-100 rounded-2xl overflow-hidden'>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
             Name

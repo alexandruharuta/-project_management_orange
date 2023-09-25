@@ -15,7 +15,7 @@ export const Sidebar = () => {
           className="w-20 h-20 mx-auto"
         />
       </div>
-      <div className="border-t border-gray mx-6">
+      <div className="border-t border-gray0 mx-6">
         <ul className="mb-4">
           <Button
             className="w-full"
@@ -37,8 +37,8 @@ export const Sidebar = () => {
           </Button>
         </ul>
       </div>
-      <div className="mx-6 border-t border-gray">
-        <h1 className="flex items-center text-gray mt-5 mb-2">Projects</h1>
+      <div className="mx-6 border-t border-gray-400">
+        <h1 className="flex items-center text-gray0 mt-5 mb-2">Projects</h1>
         <ul className="my-2 space-y-2">
           <Button
             className="w-full"
