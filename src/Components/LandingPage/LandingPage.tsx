@@ -8,7 +8,7 @@ import { Card } from "../Cards/Card";
 export default function LandingPage(): JSX.Element {
   return (
     <div className="min-h-screen flex flex-col gap-16 p-16">
-      <Header />
+      {/* <Header /> */}
       <div className="flex items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-5">
           <h1 className="text-6xl text-center">
@@ -22,10 +22,10 @@ export default function LandingPage(): JSX.Element {
         </div>
       </div>
       <div className="flex gap-2">
-        <Card className="flex-1" />
-        <Card className="flex-2" />
+        {/* <Card className="flex-1" />
+        <Card className="flex-2" /> */}
       </div>
-      <Card className="p-12 flex">
+      {/* <Card className="p-12 flex">
         <div className="flex flex-col justify-between items-center flex-1">
           <span>ABOUT US</span>
           <button className="text-white bg-light-blue rounded-full px-6 py-2">Learn More</button>
@@ -33,7 +33,7 @@ export default function LandingPage(): JSX.Element {
         <div className="text-xl flex flex-2 text-left">
           Effective solutions to manage your tasks more efficiently and effectively. With powerful features and an intuitive interface, we make sure that you can organize, track and complete your tasks with ease.
         </div>
-      </Card>
+      </Card> */}
       <div className="flex">
         <div className="flex flex-col gap-2 flex-1">
           <button className="text-light-blue border border-light-blue rounded-full px-6 py-2 w-fit">FEATURED</button>
