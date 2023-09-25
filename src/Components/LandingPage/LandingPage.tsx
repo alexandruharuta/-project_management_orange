@@ -11,7 +11,7 @@ export default function LandingPage(): JSX.Element {
       <Header />
       <div className="flex items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-5">
-          <h1 className="text-6xl text-center">
+          <h1 className="text-78-94 text-center">
             Efficient Task <br /> Management Strategies
           </h1>
           <span className="font-light">
@@ -37,11 +37,11 @@ export default function LandingPage(): JSX.Element {
       <Card className="p-12 flex">
         <div className="flex flex-col justify-between items-center flex-1">
           <span>ABOUT US</span>
-          <button className="text-white bg-light-blue rounded-full px-6 py-2">
+          <button className="text-white bg-light-blue rounded-full px-6 py-2 text-14-17">
             Learn More
           </button>
         </div>
-        <div className="text-xl flex flex-2 text-left">
+        <div className="text-30-36 flex flex-2 text-left">
           Effective solutions to manage your tasks more efficiently and
           effectively. With powerful features and an intuitive interface, we
           make sure that you can organize, track and complete your tasks with

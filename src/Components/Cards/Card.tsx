@@ -5,7 +5,7 @@ import { ICardProps } from "./Card.interface.ts";
 
 
 export const Card: React.FC<ICardProps> = ({ className, children }) => (
-    <div className={classnames("bg-light-gray rounded-lg min-h-[300px]", className)}>
+    <div className={classnames("bg-light-gray rounded-lg min-h-[455px]", className)}>
         {children}
     </div>
 )

@@ -1,7 +1,8 @@
-export default function MyTasks() {
+
+const MyTasks = () => {
   return (
-    <div>
-      <p>Dashboard</p>
-    </div>
-  );
+    <div>HomePage</div>
+  )
 }
+
+export default MyTasks

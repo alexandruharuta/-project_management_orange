@@ -2,7 +2,7 @@ import Navbar from "../Layout/Navbar";
 import { Sidebar } from "../Layout/Sidebar";
 import HomePage from "./HomePage";
 
-export default function Layout() {
+const Layout = () => {
   return (
     <>
       <div className="flex items-start">
@@ -15,3 +15,5 @@ export default function Layout() {
     </>
   );
 }
+
+export default Layout
