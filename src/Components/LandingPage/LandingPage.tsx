@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Header } from "../Header/Header";
 import { Card } from "../Cards/Card";
-// import { Footer } from "Footer/Footer.tsx";
+import { Footer } from "../Footer/Footer.tsx";
 
 export default function LandingPage(): JSX.Element {
   return (
@@ -56,7 +56,7 @@ export default function LandingPage(): JSX.Element {
           <span className="font-light text-sm text-gray">Enable users to assign a priority level (Backlog, In Progress, Review, Competed) to indicate the importance or urgency of the task.</span>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
