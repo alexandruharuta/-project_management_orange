@@ -19,9 +19,9 @@ export const Header: React.FC = () => {
                 <button className={isCurrentPage('/download')} onClick={() => navigate('/download')}>Download</button>
             </div>
             <div className="flex-1 flex justify-end">
-                <Button className="bg-light-blue text-white rounded-full px-6 py-2" onClick={() => navigate("/register")}>
+                {/* <Button className="bg-light-blue text-white rounded-full px-6 py-2" onClick={() => navigate("/register")}>
                     Get Started
-                </Button>
+                </Button> */}
             </div>
         </div>
     )
