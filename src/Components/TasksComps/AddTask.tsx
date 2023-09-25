@@ -11,7 +11,7 @@ const AddTask = () => {
     }
 
     return (
-      <form onSubmit={handleSubmit} className='border px-12 py-6 bg-gray-100 rounded-2xl overflow-hidden'>
+      <form onSubmit={handleSubmit} className='border px-12 py-6 bg-gray-100 rounded-2xl overflow-hidden ease-in-out duration-500'>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
             Name
@@ -59,7 +59,7 @@ const AddTask = () => {
   
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-blue-500 hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ease-in-out duration-500"
             type="submit"
           >
             Add Task
