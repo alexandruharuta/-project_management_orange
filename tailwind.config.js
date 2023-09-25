@@ -2,7 +2,35 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'light-blue': '#3B68FF',
+        'light-gray': '#F7F7F7',
+        'dark-gray': '#131327',
+      },
+      textColor: {
+        'dark-blue': '#10407a',
+        'light-blue': '#3B68FF',
+        'light-gray-300': '#a69999',
+      },
+      borderColor: {
+        'light-blue': '#3B68FF',
+      },
+      flex: {
+        '2': '2 2 0%',
+        '3': '3 3 0%'
+      },
+      fontSize: {
+        '12-14': ['12px', '14px'],
+        '14-17': ['14px', '17px'],
+        '16-19': ['16px', '19px'],
+        '18-21': ['18px', '21px'],
+        '24-34': ['24px', '34px'],
+        '30-36': ['30px', '36px'],
+        '34-41': ['34px', '41px'],
+        '78-94': ['78px', '94px']
+      }
+    },
     colors: {
       transparent: "transparent",
       darkBlueHover: '#1E2435',

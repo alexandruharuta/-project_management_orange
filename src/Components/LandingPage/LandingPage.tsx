@@ -11,13 +11,13 @@ export default function LandingPage(): JSX.Element {
       <Header />
       <div className="flex items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-5">
-          <h1 className="text-6xl text-center">
+          <h1 className="text-78-94 text-center">
             Efficient Task <br /> Management Strategies
           </h1>
-          <span className="font-light">Boosting Productivity and Achieving Goals</span>
+          <span className="text-18-21 font-light">Boosting Productivity and Achieving Goals</span>
           <div className="flex justify-center items-center gap-2">
-            <button className="text-white bg-light-blue rounded-full px-6 py-2">Learn More</button>
-            <button className="text-light-blue border border-light-blue rounded-full px-6 py-2">Get Started</button>
+            <button className="text-white bg-light-blue rounded-full px-6 py-2 text-14-17">Learn More</button>
+            <button className="text-light-blue border border-light-blue rounded-full px-6 py-2 text-14-17">Get Started</button>
           </div>
         </div>
       </div>
@@ -28,19 +28,19 @@ export default function LandingPage(): JSX.Element {
       <Card className="p-12 flex">
         <div className="flex flex-col justify-between items-center flex-1">
           <span>ABOUT US</span>
-          <button className="text-white bg-light-blue rounded-full px-6 py-2">Learn More</button>
+          <button className="text-white bg-light-blue rounded-full px-6 py-2 text-14-17">Learn More</button>
         </div>
-        <div className="text-xl flex flex-2 text-left">
+        <div className="text-30-36 flex flex-2 text-left">
           Effective solutions to manage your tasks more efficiently and effectively. With powerful features and an intuitive interface, we make sure that you can organize, track and complete your tasks with ease.
         </div>
       </Card>
       <div className="flex">
         <div className="flex flex-col gap-2 flex-1">
-          <button className="text-light-blue border border-light-blue rounded-full px-6 py-2 w-fit">FEATURED</button>
-          <span className="text-4xl">
+          <button className="text-light-blue border border-light-blue rounded-full px-6 py-2 w-fit text-14-17">FEATURED</button>
+          <span className="text-34-41">
             Allow users to enter a title for each task, providing a concise description of what needs to be done.
           </span>
-          <span className="font-light text-sm text-gray">Provide a space for users to add detailed information
+          <span className="font-light text-16-19 text-gray">Provide a space for users to add detailed information
             or instructions related to the task</span>
         </div>
         <div className="flex-2">
@@ -50,10 +50,10 @@ export default function LandingPage(): JSX.Element {
         <div className="flex-2">
         </div>
         <div className="flex flex-col gap-2 flex-1">
-          <button className="text-light-blue border border-light-blue rounded-full px-6 py-2 w-fit">FEATURED</button>
-          <span className="text-4xl">
+          <button className="text-light-blue border border-light-blue rounded-full px-6 py-2 w-fit text-14-17">FEATURED</button>
+          <span className="text-34-41">
             Enable users to assign a priority level to indicate the importance or urgency of the task.            </span>
-          <span className="font-light text-sm text-gray">Enable users to assign a priority level (Backlog, In Progress, Review, Competed) to indicate the importance or urgency of the task.</span>
+          <span className="font-light text-gray text-16-19">Enable users to assign a priority level (Backlog, In Progress, Review, Competed) to indicate the importance or urgency of the task.</span>
         </div>
       </div>
       <Footer />
