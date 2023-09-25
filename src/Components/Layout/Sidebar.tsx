@@ -9,13 +9,7 @@ export const Sidebar = () => {
   const navigate = useNavigate();
   return (
     <aside className="min-h-screen w-1/5 bg-darkerBlue text-white">
-      <div className="mx-6 my-6">
-        <AiOutlineMenu
-          className="cursor-pointer hover:text-gray ease-in-out duration-500"
-          style={{ fontSize: "25px" }}
-        />
-      </div>
-      <div className="flex w-full my-4">
+      <div className="flex w-full my-6">
         <img
           src="src/assets/profile-user.png"
           alt="pfp"
