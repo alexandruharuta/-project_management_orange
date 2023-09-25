@@ -2,25 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      backgroundColor: {
-        'light-blue': '#5394d7',
-        'light-gray': '#f1eded',
-        'dark-gray': '#212123',
-      },
-      textColor: {
-        'dark-blue': '#10407a',
-        'light-blue': '#5394d7',
-        'light-gray-300': '#a69999',
-      },
-      borderColor: {
-        'light-blue': '#5394d7',
-      },
-      flex: {
-        '2': '2 2 0%',
-        '3': '3 3 0%'
-      }
-    },
+    extend: {},
     colors: {
       transparent: "transparent",
       darkBlueHover: '#1E2435',

@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import Project from "../../pages/project/Project.tsx";
+import Project from "../../Pages/Project";
 import { Sidebar } from "./Sidebar";
 
 export default function Layout() {
