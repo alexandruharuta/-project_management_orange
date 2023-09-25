@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
 
     return (
         <div className="flex justify-between items-center text-xl font-normal">
-            <div className="flex-1 text-left">Logo</div>
+            <div className="flex-1 text-left text-28-34">Logo</div>
             <div className="flex-2 flex justify-between  text-gray">
                 <button className={classNames(isCurrentPage('/'), 'text-18-21')} onClick={() => navigate('/')}>Home</button>
                 <button className={classNames(isCurrentPage('/about'), 'text-18-21')} onClick={() => navigate('/about')}>About Us</button>
