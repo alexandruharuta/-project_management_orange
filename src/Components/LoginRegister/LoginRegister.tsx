@@ -167,7 +167,7 @@ export default function Register() {
             </Button>
 
             <Button
-              className="bg-dark text-white rounded-full mt-10 pt-2 pb-2"
+              className="bg-sky0 text-white rounded-full mt-10 pt-2 pb-2"
               // image={test ? "^" : "$"}
               type="submit"
             >
