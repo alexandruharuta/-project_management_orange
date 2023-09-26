@@ -14,7 +14,13 @@ interface Task {
 }
 
 const Task: React.FC<Task> = ({task, removeOnComplete}) => {
-  const formattedDueDate = task.dueDate.toLocaleDateString();
+  const formattedDueDate = task.dueDate.toLocaleString('eu-EU', {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
 
   return (
     <div className="flex justify-between border-t-2 border-gray py-2 px-8 my-2 items-center">
