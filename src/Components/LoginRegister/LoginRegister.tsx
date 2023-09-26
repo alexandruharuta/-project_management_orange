@@ -24,9 +24,8 @@ export default function Register() {
   // console.log(Object.keys(errors));
 
   return (
-    <div className="bg-gray1 h-screen flex items-center justify-between">
-      <div className="bg-dark w-500">dddddd</div>
-      <div className="bg-white w-2/6 h-5/6 mr-36 pt-10 pb-10 rounded-lg">
+    <div className="bg-gray1 min-h-screen flex items-center justify-end">
+      <div className="bg-white w-2/6 h-6/7 mr-36 pt-10 pb-10 rounded-lg flex-end">
         <div className="flex items-center grid justify-center pt-6">
           <div className="flex items-center grid justify-items-center gap-10">
             <img className="w-10" src="src/assets/star-login.svg" alt="" />
@@ -36,13 +35,13 @@ export default function Register() {
           </div>
           <div className="flex justify-around pt-20">
             <Button
-              className=" font-medium focus:border-b text-lg "
+              className="font-medium focus:border-b hover:border-btext-lg hover:text-blue-300 ease-in-out duration-300"
               onClick={() => setTest(false)}
             >
               Log in
             </Button>
             <Button
-              className="font-medium focus:border-b text-lg"
+              className="font-medium focus:border-b hover:border-b text-lg hover:text-blue-300 ease-in-out duration-300"
               onClick={() => setTest(true)}
             >
               Sign up
@@ -70,17 +69,19 @@ export default function Register() {
             />
             <div className="text-red">
               {errors.name?.type === "required" && (
-                <small className="text-xs">Name is required.</small>
+                <small className="text-xs font-semibold text-red-500">
+                  Name is required.
+                </small>
               )}
 
               {errors.name?.type === "minLength" && (
-                <small className="text-xs">
+                <small className="text-xs font-semibold text-red-500">
                   The Name should have at least 2 characters.
                 </small>
               )}
 
               {errors.name?.type === "maxLength" && (
-                <small className="text-xs">
+                <small className="text-xs font-semibold text-red-500">
                   The Name should have at most 30 characters.
                 </small>
               )}
@@ -106,7 +107,9 @@ export default function Register() {
             {errors.email && <span>{errors?.email.message}</span>}
 
             {errors.email?.type === "required" && (
-              <small className="text-red text-xs">Email is required.</small>
+              <small className="text-xs font-semibold text-red-500 mt-2">
+                Email is required.
+              </small>
             )}
 
             <input
@@ -122,17 +125,19 @@ export default function Register() {
 
             <div className="text-red">
               {errors.password?.type === "required" && (
-                <small className="text-xs">Password is required.</small>
+                <small className="text-xs font-semibold text-red-500">
+                  Password is required.
+                </small>
               )}
 
               {errors.password?.type === "minLength" && (
-                <small className="text-xs">
+                <small className="text-xs font-semibold text-red-500">
                   The Password should have at least 6 characters.
                 </small>
               )}
 
               {errors.password?.type === "maxLength" && (
-                <small className="text-xs">
+                <small className="text-xs font-semibold text-red-500">
                   The Password should have at most 16 characters.
                 </small>
               )}
@@ -154,7 +159,7 @@ export default function Register() {
                   placeholder="Confirm Password"
                 />{" "}
                 {errors.password?.type === "required" && (
-                  <small className="text-red text-xs">
+                  <small className="text-xs font-semibold text-red-500 mt-2">
                     Confirm Password is required.
                   </small>
                 )}{" "}

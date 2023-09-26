@@ -9,13 +9,13 @@ export const Sidebar = () => {
   return (
     <aside className="min-h-screen w-1/5 bg-darkerBlue text-white0">
       <div className="flex w-full my-6">
-        <img
+        {/* <img
           src="src/assets/profile-user.png"
           alt="pfp"
           className="w-20 h-20 mx-auto"
-        />
+        /> */}
       </div>
-      <div className="border-t border-gray0 mx-6">
+      <div className="mx-6">
         <ul className="mb-4">
           <Button
             className="w-full"

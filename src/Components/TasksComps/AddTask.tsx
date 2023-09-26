@@ -67,15 +67,15 @@ const AddTask: React.FC<ITaskFunc> = ({addTask}) => {
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
           >
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
           </select>
         </div>
   
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ease-in-out duration-500"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ease-in-out duration-500"
             type="submit"
           >
             Add Task
