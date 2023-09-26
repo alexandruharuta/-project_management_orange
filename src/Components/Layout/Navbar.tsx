@@ -1,6 +1,20 @@
+import { useState } from 'react';
+
+
+
 export default function Navbar() {
+
+  const [isShown, setIsShown] = useState(false);
+  const handleClick = event => {
+    // 👇️ toggle shown state
+    setIsShown(current => !current);
+
+    // 👇️ or simply set it to true
+    // setIsShown(true);
+  };
+
   return (
-    <div className="flex justify-between border-b border-dark10 w-full h-16 px-4 bg-stone-100">
+    <div className="flex justify-between border-b border-dark10 w-full h-16 px-4">
       <div className="flex items-center">
         <div className="w-7 h-7 bg-blue rounded-lg font-semibold text-lg text-indigo flex align-center justify-center">
           P
@@ -79,8 +93,8 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        <div className="flex items-center">
-          <button className="w-6 h-6 bg-blue0 rounded-full bg-gray0 text-white0 text-xs">
+        <div className="flex items-center relative">
+          <button onClick={handleClick} className="w-6 h-6 bg-blue0 rounded-full bg-gray0 text-white0 text-xs">
             N
           </button>
           <svg
@@ -99,10 +113,20 @@ export default function Navbar() {
               d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"
             />
           </svg>
+          {isShown && <Profile />}
         </div>
 
         <button className="w-200 h-200"></button>
       </div>
+    </div>
+  );
+}
+
+
+function Profile() {
+  return (
+    <div className='absolute border w-64 h-64 -left-64 top-11'>
+
     </div>
   );
 }
