@@ -159,7 +159,7 @@ export default function Register() {
                 />
                 {errors.confirm_password && (
                   <small className="text-xs font-semibold text-red-500 mt-2">
-                    {String(errors.confirm_password.message)}
+                    Confirm Password is required.
                   </small>
                 )}
               </>
