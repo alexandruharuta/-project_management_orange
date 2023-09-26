@@ -2,12 +2,25 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
+interface ITaskFunc{
+  addTask: Function;
+}
 
-const AddTask = () => {
+const AddTask: React.FC<ITaskFunc> = ({addTask}) => {
+    const [nameTask, setNameTask] = useState('')
     const [dueDate, setDueDate] = useState<Date | null>(null);
+    const [priority, setPriority] = useState('Low')
+
     const currentDate = new Date();
     const handleSubmit = (e:any) => {
         e.preventDefault();
+        if(!nameTask){
+          return
+        }
+        addTask({taskName: nameTask, dueDate, priority})
+        setDueDate(currentDate)
+        setPriority('Low')
+        setNameTask('')
     }
 
     return (
@@ -18,9 +31,10 @@ const AddTask = () => {
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="name"
             type="text"
             placeholder="Task Name"
+            value={nameTask}
+            onChange={(e) => setNameTask(e.target.value)}
           />
         </div>
   
@@ -50,6 +64,8 @@ const AddTask = () => {
           <select
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="priority"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
           >
             <option value="low">Low</option>
             <option value="medium">Medium</option>
