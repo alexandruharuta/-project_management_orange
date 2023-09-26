@@ -21,6 +21,8 @@ export default function Register() {
     },
   });
 
+  // console.log(Object.keys(errors));
+
   return (
     <div className="bg-gray1 min-h-screen flex items-center justify-end">
       <div className="bg-white w-2/6 h-6/7 mr-36 pt-10 pb-10 rounded-lg flex-end">
@@ -33,7 +35,7 @@ export default function Register() {
           </div>
           <div className="flex justify-around pt-20">
             <Button
-              className="font-medium focus:border-b hover:border-b text-lg hover:text-blue-300 ease-in-out duration-300"
+              className="font-medium focus:border-b hover:border-btext-lg hover:text-blue-300 ease-in-out duration-300"
               onClick={() => setTest(false)}
             >
               Log in
@@ -61,15 +63,13 @@ export default function Register() {
                 minLength: 2,
                 required: true,
               })}
-              className="border-b text-sm outline-none placeholder:opacity-60"
+              className=" border-b text-sm  outline-none placeholder:opacity-60  "
               type="text"
               placeholder="Name"
             />
             <div className="text-red">
               {errors.name?.type === "required" && (
-                <small className="text-xs font-semibold text-red-500">
-                  Name is required.
-                </small>
+                <small className="text-xs font-semibold text-red-500">Name is required.</small>
               )}
 
               {errors.name?.type === "minLength" && (
@@ -88,27 +88,24 @@ export default function Register() {
             <input
               {...register("email", {
                 pattern: {
+                  // eslint-disable-next-line no-useless-escape
                   value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
                   message: (
                     <span className="text-red text-xs">
-                      Enter a valid email.
+                      Enter a valid email.{" "}
                     </span>
                   ),
                 },
                 required: true,
               })}
-              className="message:text-red mt-5 border-b text-sm outline-none placeholder:opacity-60"
+              className="message:text-red mt-5 border-b text-sm outline-none placeholder:opacity-60 "
               type="email"
               placeholder="Email"
             />
-            {errors.email && (
-              <span>{String(errors?.email.message)}</span>
-            )}
+            {errors.email && <span>{errors?.email.message}</span>}
 
             {errors.email?.type === "required" && (
-              <small className="text-xs font-semibold text-red-500 mt-2">
-                Email is required.
-              </small>
+              <small className="text-xs font-semibold text-red-500 mt-2">Email is required.</small>
             )}
 
             <input
@@ -124,9 +121,7 @@ export default function Register() {
 
             <div className="text-red">
               {errors.password?.type === "required" && (
-                <small className="text-xs font-semibold text-red-500">
-                  Password is required.
-                </small>
+                <small className="text-xs font-semibold text-red-500">Password is required.</small>
               )}
 
               {errors.password?.type === "minLength" && (
@@ -148,29 +143,31 @@ export default function Register() {
                   {...register("confirm_password", {
                     required: true,
                     validate: (val: string) => {
-                      if (watch("password") !== val) {
-                        return "Your passwords do not match";
+                      if (watch("password") != val) {
+                        return "Your passwords do no match";
                       }
                     },
                   })}
                   className="mt-5 border-b text-sm outline-none placeholder:opacity-60"
                   type="password"
                   placeholder="Confirm Password"
-                />
-                {errors.confirm_password && (
+                />{" "}
+                {errors.password?.type === "required" && (
                   <small className="text-xs font-semibold text-red-500 mt-2">
                     Confirm Password is required.
                   </small>
-                )}
+                )}{" "}
               </>
             )}
 
             <Button className="italic text-xs mt-2 flex start">
+              {" "}
               Forgot password?
             </Button>
 
             <Button
               className="bg-black hover:bg-gray-700 ease-in-out duration-300 text-white rounded-full mt-10 pt-2 pb-2"
+              // image={test ? "^" : "$"}
               type="submit"
             >
               {test ? "Sign Up" : "Log In"}
