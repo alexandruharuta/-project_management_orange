@@ -2,28 +2,16 @@ import Tasks from "../Components/TasksComps/Tasks"
 import { useState } from 'react';
 import AddTask from "../Components/TasksComps/AddTask";
 
+interface  ITask{
+  id: number;
+  taskName: string;
+  dueDate: Date;
+  priority: string;
+}
+
 const Project = () => {
   const [showForm, setShowForm] = useState(false)
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      taskName: "Create login form",
-      dueDate: new Date('2023-09-25T10:00:00'),
-      priority: "Medium",
-    },
-    {
-      id: 2,
-      taskName: "Make db of task lists",
-      dueDate: new Date('2023-09-25T10:00:00'),
-      priority: "High",
-    },
-    {
-      id: 3,
-      taskName: "Create toggle button",
-      dueDate: new Date('2023-09-25T10:00:00'),
-      priority: "Low",
-    },
-  ])
+  const [tasks, setTasks] = useState<ITask[]>([])
 
   const addTask = (task:any) => {
     const id = Math.floor(Math.random() * 10000) + 1
