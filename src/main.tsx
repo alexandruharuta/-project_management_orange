@@ -7,6 +7,7 @@ import Layout from "./Components/Layout/Layout.tsx";
 import LandingPage from "./Components/LandingPage/LandingPage.tsx";
 import HomeLayout from "./Components/Dashboard/HomeLayout.tsx";
 import MyTasksLayout from "./Components/MyTasks/MyTasksLayout.tsx";
+import UserLayout from "./Components/UserProfile/UserLayout.tsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/mytasks",
     element: <MyTasksLayout />,
+  },
+  {
+    path: "/profile",
+    element: <UserLayout />,
   },
 ]);
 

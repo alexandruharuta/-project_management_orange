@@ -1,19 +1,19 @@
 import Navbar from "../Layout/Navbar";
 import { Sidebar } from "../Layout/Sidebar";
-import HomePage from "./HomePage";
+import UserProfile from "./UserProfile";
 
-const HomeLayout = () => {
+const UserLayout = () => {
   return (
     <>
       <div className="flex items-start">
         <Sidebar></Sidebar>
         <div className="w-full">
           <Navbar></Navbar>
-          <HomePage></HomePage>
+          <UserProfile></UserProfile>
         </div>
       </div>
     </>
   );
 };
 
-export default HomeLayout;
+export default UserLayout;

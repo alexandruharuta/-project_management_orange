@@ -6,6 +6,7 @@ interface IButton {
   onClick?: () => void;
   image?: string;
   type?: "submit" | "button";
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -14,9 +15,15 @@ export default function Button({
   onClick,
   image,
   type,
+  disabled,
 }: IButton) {
   return (
-    <button className={className} onClick={onClick} type={type}>
+    <button
+      className={className}
+      onClick={onClick}
+      type={type}
+      disabled={disabled}
+    >
       {image}
       {children}
     </button>
