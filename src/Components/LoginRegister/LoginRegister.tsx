@@ -2,10 +2,13 @@ import { useState } from "react";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import PopUp from "../PopUp/PopUp";
 
 export default function Register() {
   const navigate = useNavigate();
   const [test, setTest] = useState<boolean>(false);
+  const [showPopUp, setShowPopUp] = useState<boolean>(false);
+  const [getEmail, setGetEmail] = useState<string>("");
 
   const {
     register,
@@ -21,11 +24,15 @@ export default function Register() {
     },
   });
 
+  const handleForgotPassword = () => {
+    setShowPopUp(true);
+  };
+
   // console.log(Object.keys(errors));
 
   return (
     <div className="bg-gray1 min-h-screen flex items-center justify-end">
-      <div className="bg-white w-2/6 h-6/7 mr-36 pt-10 pb-10 rounded-lg flex-end">
+      <div className="bg-white w-2/6 h-6/7 mr-36 pt-10 pb-10 rounded-lg flex-end relative">
         <div className="flex items-center grid justify-center pt-6">
           <div className="flex items-center grid justify-items-center gap-10">
             <img className="w-10" src="src/assets/star-login.svg" alt="" />
@@ -166,7 +173,10 @@ export default function Register() {
               </>
             )}
 
-            <Button className="italic text-xs mt-2 flex start">
+            <Button
+              className="italic text-xs mt-2 flex start"
+              onClick={handleForgotPassword}
+            >
               {" "}
               Forgot password?
             </Button>
@@ -180,6 +190,21 @@ export default function Register() {
             </Button>
           </form>
         </div>
+        {showPopUp && (
+          <PopUp
+            getEmail={getEmail}
+            setGetEmail={setGetEmail}
+            setShowPopUp={setShowPopUp}
+          >
+            <input
+              type="email"
+              placeholder="Email"
+              className=" border-b text-sm  outline-none placeholder:opacity-60 mt-10 w-[100%] "
+              value={getEmail}
+              onChange={(e: any) => setGetEmail(e.target.value)}
+            />
+          </PopUp>
+        )}
       </div>
     </div>
   );

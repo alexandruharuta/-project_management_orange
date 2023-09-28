@@ -4,6 +4,7 @@ import LoginRegister from "./Components/LandingPage/LandingPage";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import HomeLayout from "./Components/Dashboard/HomeLayout";
 import MyTasksLayout from "./Components/MyTasks/MyTasksLayout";
+import UserLayout from "./Components/UserProfile/UserLayout";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <LoginRegister />
       <MyTasksLayout />
       <HomeLayout />
+      <UserLayout />
     </>
   );
 }

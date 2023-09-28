@@ -17,19 +17,13 @@ export const Sidebar = () => {
       </div>
       <div className="mx-6">
         <ul className="mb-4">
-          <Button
-            className="w-full"
-            onClick={() => navigate("/home")}
-          >
+          <Button className="w-full" onClick={() => navigate("/home")}>
             <li className="flex items-center mt-4 rounded-full hover:bg-darkBlueHover cursor-pointer w-full py-2 px-3 ease-in-out duration-500">
               <RiHome2Fill className="mr-2" />
               Home
             </li>
           </Button>
-          <Button
-            className="w-full"
-            onClick={() => navigate("/mytasks")}
-          >
+          <Button className="w-full" onClick={() => navigate("/mytasks")}>
             <li className="flex items-center mt-4 rounded-full hover:bg-darkBlueHover cursor-pointer w-full py-2 px-3 ease-in-out duration-500">
               <FaListAlt className="mr-2" />
               My Tasks
@@ -40,10 +34,7 @@ export const Sidebar = () => {
       <div className="mx-6 border-t border-gray-400">
         <h1 className="flex items-center text-gray0 mt-5 mb-2">Projects</h1>
         <ul className="my-2 space-y-2">
-          <Button
-            className="w-full"
-            onClick={() => navigate("/project")}
-          >
+          <Button className="w-full" onClick={() => navigate("/project")}>
             <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
               <BiSolidBookmark style={{ color: "lightred" }} className="mr-1" />
               Project 1
@@ -59,6 +50,19 @@ export const Sidebar = () => {
           </li>
         </ul>
       </div>
+
+      <Button
+        className="flex items-center gap-4 bg-gray2 rounded-lg pl-2 pt-3 pb-3 w-[80%] ml-6 mt-[125%]"
+        onClick={() => navigate("/profile")}
+      >
+        <div className="w-8 h-8 bg-blue0 rounded-full -mr-2 bg-gray0 text-white text-sm">
+          JD
+        </div>
+        <div className="grid">
+          <p className="text-[15px]">John Doe</p>
+          <p className="text-[10px] -mt-1 font-light">Web Developer</p>
+        </div>
+      </Button>
     </aside>
   );
 };

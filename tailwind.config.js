@@ -50,6 +50,7 @@ export default {
         red0: "#E21B1B",
         yellow0: "#F5D2BC",
         gray1: "#E9E9E9",
+        gray2: "#2A303C"
       },
     },
   },
