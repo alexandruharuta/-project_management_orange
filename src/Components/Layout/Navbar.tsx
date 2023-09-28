@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import CreateModal from '../Modal/CreateModal';
+import { useState } from "react";
+import CreateModal from "../Modal/CreateModal";
 import Button from "../Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [createModal, setCreateModal] = useState(false);
@@ -39,9 +40,10 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center ">
-        <button 
-         onClick={() => setCreateModal(true)}
-         className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0">
+        <button
+          onClick={() => setCreateModal(true)}
+          className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0"
+        >
           <p className="ml-1 text-sm text-indigo">Create</p>
           <svg
             className="w-2 h-2 text-gray-800 ml-2 text-indigo"
@@ -59,7 +61,7 @@ export default function Navbar() {
             />
           </svg>
         </button>
-          <CreateModal onClose={handleOnClose} visible={createModal}/>
+        <CreateModal onClose={handleOnClose} visible={createModal} />
         <button>
           {/* Menu */}
           <svg
@@ -129,8 +131,9 @@ export default function Navbar() {
 }
 
 function Profile() {
+  const navigate = useNavigate();
   return (
-    <div className="absolute border w-48 h-48 -left-40 top-11">
+    <div className="absolute border w-48 h-48 -left-40 top-11 bg-white">
       <div>
         <div className=" fixed grid gap-3 mt-3 ml-4">
           <div className="flex items-center gap-1">
@@ -168,7 +171,7 @@ function Profile() {
                 d="M7 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-2 3h4a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z"
               />
             </svg>
-            <Button>Profile</Button>
+            <Button onClick={() => navigate("/profile")}>Profile</Button>
           </div>
           <div className="flex items-center gap-1">
             <svg
@@ -197,7 +200,7 @@ function Profile() {
                 fill="currentColor"
               />
             </svg>
-            <Button>Settings</Button>
+            <Button onClick={() => navigate("/settings")}>Settings</Button>
           </div>
           <div className="w-44 h-px bg-gray1 mt-3 -ml-2"></div>
           <div className="flex items-center gap-1">
