@@ -1,9 +1,41 @@
+import { useState, useEffect } from "react";
 import TableRow from "./TableRow"
 
+interface ITable{
+  id:number;
+  taskName:string;
+  dueDate:Date;
+  priority:string;
+}
+
 const MyTasks = () => {
-  const taskName = 'Toggle button func'
-  const dueDate = '28.09'
-  const priority = 'High'
+  const [tasks, setTasks] = useState<ITable[]>([]);
+
+  //FechData
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks()
+      setTasks(tasksFromServer)
+    }
+
+    getTasks()
+  }, [])
+
+  const fetchTasks = async () => {
+    const res = await fetch('http://localhost:5000/tasks')
+    const data = await res.json()
+    
+    return data
+  }
+  //
+
+  const removeOnComplete = async (id: number) => {
+    await fetch(`http://localhost:5000/tasks/${id}`,{
+      method: 'DELETE',
+    })
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
     <>
       <div className="border rounded-lg w-56 h-9 flex items-center gap-2 ml-5 mt-5 opacity-50">
@@ -16,39 +48,46 @@ const MyTasks = () => {
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
             d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
           />
         </svg>
         <p>Search for tasks</p>
       </div>
 
-      <p className="font-medium text-2xl ml-5 mt-3">Active Tasks</p>
+      <div className="container mx-auto mt-5">
+        <p className="font-medium text-2xl ml-5 mb-3">
+          {tasks.length > 0 ? "Active Tasks" : "No Tasks"}
+        </p>
 
-      <div className="container mx-auto mt-10">
-        <table className="min-w-full">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="px-6 py-3 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
-                Task Name
-              </th>
-              <th className="px-6 py-3 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
-                Due Date
-              </th>
-              <th className="px-6 py-3 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
-                Priority
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* You can map over your data and create rows here */}
-            <TableRow taskName = {taskName} dueDate = {dueDate} priority = {priority} />
-            {/* Add more rows as needed */}
-          </tbody>
-        </table>
-    </div>
+        {tasks.length > 0 && (
+          <div className="shadow overflow-hidden border-b border-gray-200 rounded-lg">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Mark as Complete
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Task Name
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Due Date
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Priority
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                <TableRow removeOnComplete={removeOnComplete} tasks={tasks} />
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
     </>
   )
 }
