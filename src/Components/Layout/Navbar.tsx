@@ -3,8 +3,9 @@ import CreateModal from '../Modal/CreateModal';
 
 
 export default function Navbar() {
+  const [createModal, setCreateModal] = useState(false);
+  const handleOnClose = () => setCreateModal(false);
   const [isShown, setIsShown] = useState(false);
-  const handleOnClose = () => setIsShown(false);
   const handleClick = event => {
     // 👇️ toggle shown state
     setIsShown(current => !current);
@@ -39,7 +40,7 @@ export default function Navbar() {
 
       <div className="flex items-center ">
         <button 
-         onClick={() => setIsShown(true)}
+         onClick={() => setCreateModal(true)}
          className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0">
           <p className="ml-1 text-sm text-indigo">Create</p>
           <svg
@@ -58,7 +59,7 @@ export default function Navbar() {
             />
           </svg>
         </button>
-          <CreateModal onClose={handleOnClose} visible={isShown}/>
+          <CreateModal onClose={handleOnClose} visible={createModal}/>
         <button>
           {/* Menu */}
           <svg
