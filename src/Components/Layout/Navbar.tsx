@@ -1,10 +1,10 @@
 import { useState } from 'react';
-
+import CreateModal from '../Modal/CreateModal';
 
 
 export default function Navbar() {
-
   const [isShown, setIsShown] = useState(false);
+  const handleOnClose = () => setIsShown(false);
   const handleClick = event => {
     // 👇️ toggle shown state
     setIsShown(current => !current);
@@ -38,7 +38,9 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center ">
-        <button className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0">
+        <button 
+         onClick={() => setIsShown(true)}
+         className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0">
           <p className="ml-1 text-sm text-indigo">Create</p>
           <svg
             className="w-2 h-2 text-gray-800 ml-2 text-indigo"
@@ -56,7 +58,7 @@ export default function Navbar() {
             />
           </svg>
         </button>
-
+          <CreateModal onClose={handleOnClose} visible={isShown}/>
         <button>
           {/* Menu */}
           <svg
