@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
+import CreateModal from '../Modal/CreateModal';
 import Button from "../Button";
 
 export default function Navbar() {
+  const [createModal, setCreateModal] = useState(false);
+  const handleOnClose = () => setCreateModal(false);
   const [isShown, setIsShown] = useState(false);
   const handleClick = (event) => {
     // 👇️ toggle shown state
@@ -36,7 +39,9 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center ">
-        <button className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0">
+        <button 
+         onClick={() => setCreateModal(true)}
+         className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0">
           <p className="ml-1 text-sm text-indigo">Create</p>
           <svg
             className="w-2 h-2 text-gray-800 ml-2 text-indigo"
@@ -54,7 +59,7 @@ export default function Navbar() {
             />
           </svg>
         </button>
-
+          <CreateModal onClose={handleOnClose} visible={createModal}/>
         <button>
           {/* Menu */}
           <svg
