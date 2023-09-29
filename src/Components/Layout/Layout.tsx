@@ -2,7 +2,6 @@ import Navbar from "./Navbar";
 import Project from "../../Pages/Project";
 import {Sidebar} from "./Sidebar";
 import {useParams} from "react-router-dom";
-import { useEffect } from "react";
 
 export default function Layout() {
   const projectId = +(useParams().id || "0");
