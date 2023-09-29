@@ -1,11 +1,26 @@
-import { BiSolidBookmark } from "react-icons/bi";
-import { RiHome2Fill } from "react-icons/ri";
-import { FaListAlt } from "react-icons/fa";
+import {BiSolidBookmark} from "react-icons/bi";
+import {RiHome2Fill} from "react-icons/ri";
+import {FaListAlt} from "react-icons/fa";
 import Button from "../Button";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import {IProject} from "../../api/interfaces/IProject";
+import api from "../../api/mockApi";
+import CreateProjectModal from "../Modal/CreateProjectModal";
+import {useEffect, useState} from "react";
 
 export const Sidebar = () => {
   const navigate = useNavigate();
+
+  const [projects, setProjects] = useState<IProject[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      setProjects(await api.getAllProjects());
+    })();
+  });
+
+  const [projectModalIsVisible, setProjectModalIsVisible] = useState(false);
+
   return (
     <aside className="min-h-screen w-1/5 bg-darkerBlue text-white0">
       <div className="flex w-full my-6">
@@ -34,27 +49,38 @@ export const Sidebar = () => {
       <div className="mx-6 border-t border-gray-400">
         <h1 className="flex items-center text-gray0 mt-5 mb-2">Projects</h1>
         <ul className="my-2 space-y-2">
-          <Button className="w-full" onClick={() => navigate("/project")}>
-            <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
-              <BiSolidBookmark style={{ color: "lightred" }} className="mr-1" />
-              Project 1
-            </li>
-          </Button>
-          <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
-            <BiSolidBookmark style={{ color: "lightblue" }} className="mr-1" />
-            Project 2
-          </li>
-          <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
-            <BiSolidBookmark style={{ color: "lightgreen" }} className="mr-1" />
-            Project 3
-          </li>
+          {projects.map((project) => {
+            return (
+              <Button
+                className="w-full"
+                onClick={() => navigate("/project/" + project.id)}>
+                <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
+                  <BiSolidBookmark
+                    style={{color: "lightred"}}
+                    className="mr-1"
+                  />
+                  {project.name}
+                </li>
+              </Button>
+            );
+          })}
+
+          <button
+            onClick={() => setProjectModalIsVisible(true)}
+            className=" rounded-lg  bg-white text-black px-2 py-1 hover:brightness-75">
+            Create Project
+          </button>
+          <CreateProjectModal
+            visible={projectModalIsVisible}
+            onClose={() => setProjectModalIsVisible(false)}
+            onCreate={() => setProjectModalIsVisible(false)}
+          />
         </ul>
       </div>
 
       <Button
         className="flex items-center gap-4 bg-gray2 rounded-lg pl-2 pt-3 pb-3 w-[80%] ml-6 mt-[125%]"
-        onClick={() => navigate("/profile")}
-      >
+        onClick={() => navigate("/profile")}>
         <div className="w-8 h-8 bg-blue0 rounded-full -mr-2 bg-gray0 text-white text-sm">
           JD
         </div>

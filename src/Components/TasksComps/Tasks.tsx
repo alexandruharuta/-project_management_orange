@@ -1,11 +1,5 @@
+import { ITask } from "../../api/interfaces/ITask";
 import Task from "./Task"
-
-interface ITask {
-  id: number;
-  taskName: string;
-  dueDate: Date;
-  priority: string;
-}
 
 interface ITaskList {
   tasks: ITask[];
