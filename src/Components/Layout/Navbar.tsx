@@ -1,13 +1,14 @@
-import { useState } from "react";
+import {useState} from "react";
 import CreateModal from "../Modal/CreateModal";
 import Button from "../Button";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export default function Navbar() {
   const [createModal, setCreateModal] = useState(false);
   const handleOnClose = () => setCreateModal(false);
   const [isShown, setIsShown] = useState(false);
-  const handleClick = (event) => {
+  const handleClick = (event: unknown) => {
+    event;
     // 👇️ toggle shown state
     setIsShown((current) => !current);
 
@@ -28,8 +29,7 @@ export default function Navbar() {
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          viewBox="0 0 17 4"
-        >
+          viewBox="0 0 17 4">
           <path
             stroke="currentColor"
             stroke-linecap="round"
@@ -42,16 +42,14 @@ export default function Navbar() {
       <div className="flex items-center ">
         <button
           onClick={() => setCreateModal(true)}
-          className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0"
-        >
+          className="flex items-center rounded-3xl px-4 py-1.5 bg-blue0">
           <p className="ml-1 text-sm text-indigo">Create</p>
           <svg
             className="w-2 h-2 text-gray-800 ml-2 text-indigo"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 18 18"
-          >
+            viewBox="0 0 18 18">
             <path
               stroke="currentColor"
               stroke-linecap="round"
@@ -69,8 +67,7 @@ export default function Navbar() {
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 18 18"
-          >
+            viewBox="0 0 18 18">
             <path
               stroke="currentColor"
               stroke-linecap="round"
@@ -87,8 +84,7 @@ export default function Navbar() {
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 16 21"
-          >
+            viewBox="0 0 16 21">
             <path
               stroke="currentColor"
               stroke-linecap="round"
@@ -101,8 +97,7 @@ export default function Navbar() {
         <div className="flex items-center relative">
           <button
             onClick={handleClick}
-            className="w-6 h-6 bg-blue0 rounded-full bg-gray0 text-white0 text-xs"
-          >
+            className="w-6 h-6 bg-blue0 rounded-full text-white0 text-xs">
             N
           </button>
           <svg
@@ -110,8 +105,7 @@ export default function Navbar() {
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            viewBox="0 0 20 20"
-          >
+            viewBox="0 0 20 20">
             <path
               fill="currentColor"
               d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"
@@ -142,8 +136,7 @@ function Profile() {
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 16 12"
-            >
+              viewBox="0 0 16 12">
               <path
                 stroke="currentColor"
                 stroke-linecap="round"
@@ -161,8 +154,7 @@ function Profile() {
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 14 18"
-            >
+              viewBox="0 0 14 18">
               <path
                 stroke="currentColor"
                 stroke-linecap="round"
@@ -179,8 +171,7 @@ function Profile() {
               aria-hidden="true"
               viewBox="0 0 20 18"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M6.5 8C5.80777 8 5.13108 7.79473 4.55551 7.41015C3.97993 7.02556 3.53133 6.47893 3.26642 5.83939C3.00152 5.19985 2.9322 4.49612 3.06725 3.81719C3.2023 3.13825 3.53564 2.51461 4.02513 2.02513C4.51461 1.53564 5.13825 1.2023 5.81719 1.06725C6.49612 0.932205 7.19985 1.00152 7.83939 1.26642C8.47893 1.53133 9.02556 1.97993 9.41015 2.55551C9.79473 3.13108 10 3.80777 10 4.5"
                 stroke="currentColor"
@@ -209,8 +200,7 @@ function Profile() {
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 14 10"
-            >
+              viewBox="0 0 14 10">
               <path
                 stroke="currentColor"
                 stroke-linecap="round"

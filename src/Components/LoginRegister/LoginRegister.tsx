@@ -99,11 +99,12 @@ export default function Register() {
                 pattern: {
                   // eslint-disable-next-line no-useless-escape
                   value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                  // @ts-ignore
                   message: (
                     <span className="text-red text-xs">
                       Enter a valid email.{" "}
-                    </span>
-                  ),
+                    </span> 
+                  ) ,
                 },
                 required: true,
               })}
