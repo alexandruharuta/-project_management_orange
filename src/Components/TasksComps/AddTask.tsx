@@ -62,6 +62,7 @@ const AddTask: React.FC<ITaskFunc> = ({addTask}) => {
           showTimeSelect
           timeFormat="HH:mm"
           timeIntervals={15}
+          autoComplete="off"
           dateFormat="MMMM d, yyyy h:mm aa"
           placeholderText="Select Due Date and Time"
           minDate={currentDate}

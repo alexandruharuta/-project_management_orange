@@ -42,9 +42,6 @@ const Project: React.FC<ProjectProps> = (props) => {
 
   return (
     <div className="px-16 py-16 overflow-hidden">
-      <div>name: {projectData?.name}</div>
-      <div>id: {projectData?.id}</div>
-
       <button
         className={`rounded-full outline-none ${
           showForm
@@ -77,7 +74,7 @@ export default Project;
 
 function findLargestTaskId(projects: ITask[]): number {
   if (projects.length === 0) {
-    return 0; // Return undefined if the list is empty
+    return 0;
   }
 
   let largestIdProject = projects[0];

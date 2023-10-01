@@ -1,12 +1,24 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import CreateModal from "../Modal/CreateModal";
 import Button from "../Button";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import {IProject} from "../../api/interfaces/IProject";
+import api from "../../api/mockApi";
+import {AiOutlineProject, AiOutlineFundProjectionScreen} from "react-icons/ai";
 
-export default function Navbar() {
+const Navbar = () => {
+  const {id} = useParams();
+  const [projectData, setProjectData] = useState<IProject | undefined>();
   const [createModal, setCreateModal] = useState(false);
   const handleOnClose = () => setCreateModal(false);
   const [isShown, setIsShown] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      setProjectData(await api.getProject(Number(id)));
+    })();
+  });
+
   const handleClick = (event: unknown) => {
     event;
     // 👇️ toggle shown state
@@ -19,10 +31,14 @@ export default function Navbar() {
   return (
     <div className="flex justify-between border-b border-dark10 w-full h-16 px-4">
       <div className="flex items-center">
-        <div className="w-7 h-7 bg-blue rounded-lg font-semibold text-lg text-indigo flex align-center justify-center">
-          P
-        </div>
-        <p className="ml-3 font-semibold text-lg">Project Name</p>
+        <p className="flex items-center">
+          {projectData?.name && (
+            <AiOutlineFundProjectionScreen className="mr-2 text-2xl text-indigo-600" />
+          )}
+          <span className="text-lg font-bold text-gray-800">
+            {projectData?.name}
+          </span>
+        </p>
 
         <svg
           className="w-6 h-6 text-gray-800 dark:text-white ml-2 opacity-50"
@@ -122,7 +138,8 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};
+export default Navbar;
 
 function Profile() {
   const navigate = useNavigate();

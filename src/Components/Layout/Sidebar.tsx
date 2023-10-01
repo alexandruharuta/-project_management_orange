@@ -1,6 +1,7 @@
 import {BiSolidBookmark} from "react-icons/bi";
+import {BsFillPlusCircleFill} from "react-icons/bs";
 import {RiHome2Fill} from "react-icons/ri";
-import {FaListAlt} from "react-icons/fa";
+import {FaListAlt, FaTimes} from "react-icons/fa";
 import Button from "../Button";
 import {useNavigate} from "react-router-dom";
 import {IProject} from "../../api/interfaces/IProject";
@@ -10,26 +11,27 @@ import {useEffect, useState} from "react";
 
 export const Sidebar = () => {
   const navigate = useNavigate();
-
   const [projects, setProjects] = useState<IProject[]>([]);
 
   useEffect(() => {
     (async () => {
       setProjects(await api.getAllProjects());
     })();
-  });
+  }, []);
+
+  const handleDeleteProject = (id: number) => {
+    navigate("/mytasks");
+    api.deleteProject(id);
+  };
 
   const [projectModalIsVisible, setProjectModalIsVisible] = useState(false);
 
   return (
-    <aside className="min-h-screen w-1/5 bg-darkerBlue text-white0">
-      <div className="flex w-full my-6">
-        {/* <img
-          src="src/assets/profile-user.png"
-          alt="pfp"
-          className="w-20 h-20 mx-auto"
-        /> */}
+    <aside className="min-h-screen w-1/5 bg-darkerBlue text-white0 ease-in-out duration-300">
+      <div className="flex my-6 justify-center items-center p-2 border mx-2 rounded-full font-bold font-sans text-lg">
+        Team Task Management
       </div>
+
       <div className="mx-6">
         <ul className="mb-4">
           <Button className="w-full" onClick={() => navigate("/home")}>
@@ -51,23 +53,30 @@ export const Sidebar = () => {
         <ul className="my-2 space-y-2">
           {projects.map((project) => {
             return (
-              <Button
-                className="w-full"
-                onClick={() => navigate("/project/" + project.id)}>
-                <li className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
-                  <BiSolidBookmark
-                    style={{color: "lightred"}}
-                    className="mr-1"
-                  />
-                  {project.name}
-                </li>
-              </Button>
+              <div className="flex items-center rounded-full pr-2 hover:bg-darkBlueHover ease-in-out duration-200">
+                <Button
+                  className="w-full"
+                  onClick={() => navigate("/project/" + project.id)}>
+                  <li
+                    key={project.id}
+                    className="flex items-center rounded-full hover:bg-darkBlueHover cursor-pointer px-3 py-1 ease-in-out duration-500">
+                    <BiSolidBookmark className="mx-1 text-blue-400" />
+                    <span className="flex items-center justify-between w-full">
+                      {project.name}
+                    </span>
+                  </li>
+                </Button>
+                <button onClick={() => handleDeleteProject(project.id)}>
+                  <FaTimes className="text-darkerBlue text-lg hover:text-red-400 ease-in-out duration-300" />
+                </button>
+              </div>
             );
           })}
 
           <button
             onClick={() => setProjectModalIsVisible(true)}
-            className=" rounded-lg  bg-white text-black px-2 py-1 hover:brightness-75">
+            className=" flex items-center rounded-full outline-none border text-white px-3 py-2 brightness-50 hover:brightness-100 font-semibold ease-in-out duration-500">
+            <BsFillPlusCircleFill className="mr-2 text-xl hover:bg-white rounded-full ease-in-out duration-500" />
             Create Project
           </button>
           <CreateProjectModal

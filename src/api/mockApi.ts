@@ -28,10 +28,20 @@ const api = {
 
   async createProject(data: IProject) {
     data.id = findLargestProjectId(projectList) + 1;
-
     projectList.push(data);
     injectInLocalstorage();
     return data;
+  },
+
+  async deleteProject(id: number) {
+    const indexToDelete = projectList.findIndex((e) => e.id === id);
+    if (indexToDelete !== -1) {
+      projectList.splice(indexToDelete, 1);
+      injectInLocalstorage();
+      return true;
+    } else {
+      return false;
+    }
   },
 };
 
