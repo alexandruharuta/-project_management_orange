@@ -44,7 +44,11 @@ const TableRow: React.FC<IRow> = ({
       <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
         {projectName}
       </td>
-      <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+      <td
+        className={`px-6 py-4 whitespace-no-wrap border-b border-gray-200 font-bold ${
+          priority === "Medium" && "text-yellow-500"
+        } ${priority === "Low" && "text-blue-300"}
+        ${priority === "High" && "text-red-500"}`}>
         {priority}
       </td>
     </tr>

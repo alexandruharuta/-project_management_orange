@@ -18,18 +18,13 @@ const MyTasks = () => {
     <>
       <p className="font-medium text-2xl ml-5 mt-3">Active Tasks</p>
       <div className="flex items- mx-4 my-2 justify-center items-center">
-        <div className="relative w-1/3">
-          <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <FaSearch className="text-gray-400" />
-          </span>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="py-2 pl-10 pr-4 rounded-full focus:outline-none focus:ring focus:border-blue-300 w-full border"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-        </div>
+        <input
+          type="text"
+          placeholder="Search..."
+          className="py-2 pl-10 pr-4 rounded-full focus:outline-none focus:ring focus:border-blue-300 w-1/3 border text-center"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
       </div>
       <div className="container mx-auto mt-10">
         <table className="min-w-full">
@@ -58,6 +53,11 @@ const MyTasks = () => {
                 .filter((task) =>
                   task.taskName.toLowerCase().includes(input.toLowerCase())
                 )
+                .sort((taskA, taskB) => {
+                  const dueDateA: any = new Date(taskA.dueDate);
+                  const dueDateB: any = new Date(taskB.dueDate);
+                  return dueDateA - dueDateB;
+                })
                 .map((task) => (
                   <TableRow
                     key={task.id}
