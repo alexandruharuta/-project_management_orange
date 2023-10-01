@@ -1,4 +1,4 @@
-import { ITask } from "./ITask";
+import {ITask} from "./ITask";
 
 export interface IProject {
   id: number;

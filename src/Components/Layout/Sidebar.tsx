@@ -27,7 +27,7 @@ export const Sidebar = () => {
   const [projectModalIsVisible, setProjectModalIsVisible] = useState(false);
 
   return (
-    <aside className="min-h-screen w-1/5 bg-darkerBlue text-white0 ease-in-out duration-300">
+    <aside className="min-h-screen w-1/5 bg-darkerBlue text-white0">
       <div className="flex my-6 justify-center items-center p-2 border mx-2 rounded-full font-bold font-sans text-lg">
         Team Task Management
       </div>
