@@ -1,7 +1,7 @@
 import "./App.css";
 import Layout from "./Components/Layout/Layout";
-import LoginRegister from "./Components/LandingPage/LandingPage22";
-import LandingPage from "./Components/LandingPage/LandingPage22";
+import LoginRegister from "./Components/LandingPage/LandingPage";
+import LandingPage from "./Components/LandingPage/LandingPage";
 import HomeLayout from "./Components/Dashboard/HomeLayout";
 import MyTasksLayout from "./Components/MyTasks/MyTasksLayout";
 import UserLayout from "./Components/UserProfile/UserLayout";

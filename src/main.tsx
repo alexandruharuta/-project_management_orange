@@ -4,7 +4,7 @@ import "./index.css";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import LoginRegister from "./Components/LoginRegister/LoginRegister.tsx";
 import Layout from "./Components/Layout/Layout.tsx";
-import LandingPage from "./Components/LandingPage/LandingPage22.tsx";
+import LandingPage from "./Components/LandingPage/LandingPage.tsx";
 import HomeLayout from "./Components/Dashboard/HomeLayout.tsx";
 import MyTasksLayout from "./Components/MyTasks/MyTasksLayout.tsx";
 import UserLayout from "./Components/UserProfile/UserLayout.tsx";
