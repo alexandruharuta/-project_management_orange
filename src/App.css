@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-section {
+.section {
   position: relative;
   flex-direction: column;
   padding: 100px;

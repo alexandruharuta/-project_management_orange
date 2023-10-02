@@ -6,7 +6,7 @@ import "../../App.css";
 export default function LandingPage(): JSX.Element {
   const navigate = useNavigate();
   return (
-    <section className="min-h-screen">
+    <section className="section min-h-screen">
       <div className="custom-shape-divider-top-1696260648">
         <svg
           data-name="Layer 1"
