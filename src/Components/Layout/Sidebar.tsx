@@ -8,7 +8,7 @@ import {IProject} from "../../api/interfaces/IProject";
 import api from "../../api/mockApi";
 import CreateProjectModal from "../Modal/CreateProjectModal";
 import {useEffect, useRef, useState} from "react";
-import ProjectDeleteModal from "../Modal/ProjectDeleteModal";
+import DeleteModal from "../Modal/DeleteModal";
 
 export const Sidebar = () => {
   const navigate = useNavigate();
@@ -110,12 +110,9 @@ export const Sidebar = () => {
           />
         </ul>
         {dialog.isLoading && (
-          <ProjectDeleteModal
-            onDialog={confirmDelete}
-            message={dialog.message}
-          />
+          <DeleteModal onDialog={confirmDelete} message={dialog.message} />
         )}
-      </div>
+      </div> 
 
       <Button
         className="flex items-center gap-4 bg-gray2 rounded-lg pl-2 pt-3 pb-3 w-[80%] ml-6 mt-[125%]"

@@ -46,6 +46,7 @@ const CreateProjectModal: React.FC<Props> = (props) => {
       return;
     }
     await createProject(projectData);
+    projectData.name = "";
   };
 
   const handleOnClose = (e: any) => {

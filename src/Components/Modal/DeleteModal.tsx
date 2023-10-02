@@ -1,4 +1,4 @@
-const ProjectDeleteModal = ({onDialog, message}) => {
+const DeleteModal = ({onDialog, message}) => {
   return (
     <div
       id="deleteContainer"
@@ -24,4 +24,4 @@ const ProjectDeleteModal = ({onDialog, message}) => {
   );
 };
 
-export default ProjectDeleteModal;
+export default DeleteModal;
