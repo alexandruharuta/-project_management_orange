@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 interface IRow {
   key: number;
@@ -30,10 +30,20 @@ const TableRow: React.FC<IRow> = ({
   priority,
   projectName,
 }) => {
+  const [status, setStatus] = useState("");
+
   return (
     <tr key={key} className="bg-white">
       <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-        Complete
+        <select
+          id="statusDropdown"
+          value={status}
+          onChange={(e) => setStatus(e.target.value)}>
+          <option value="">Select an option</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+          <option value="Pending">Pending</option>
+        </select>
       </td>
       <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
         {taskName}
@@ -41,7 +51,7 @@ const TableRow: React.FC<IRow> = ({
       <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
         {formatDueDate(dueDate)}
       </td>
-      <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+      <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200 font-semibold">
         {projectName}
       </td>
       <td

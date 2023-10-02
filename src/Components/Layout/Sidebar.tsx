@@ -7,7 +7,8 @@ import {useNavigate} from "react-router-dom";
 import {IProject} from "../../api/interfaces/IProject";
 import api from "../../api/mockApi";
 import CreateProjectModal from "../Modal/CreateProjectModal";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import ProjectDeleteModal from "../Modal/ProjectDeleteModal";
 
 export const Sidebar = () => {
   const navigate = useNavigate();
@@ -19,12 +20,35 @@ export const Sidebar = () => {
     })();
   }, []);
 
-  const handleDeleteProject = (id: number) => {
-    navigate("/mytasks");
-    api.deleteProject(id);
+  const [projectModalIsVisible, setProjectModalIsVisible] = useState(false);
+
+  const [dialog, setDialog] = useState({
+    message: "Are you sure you want to delete this project?",
+    isLoading: false,
+  });
+
+  const getIdProject = useRef<number | undefined>(undefined);
+
+  const handleDialog = (message, isLoading) => {
+    setDialog({
+      message,
+      isLoading,
+    });
   };
 
-  const [projectModalIsVisible, setProjectModalIsVisible] = useState(false);
+  const handleDeleteProject = (id: number) => {
+    handleDialog("Are you sure you want to delete this project?", true);
+    getIdProject.current = id;
+  };
+
+  const confirmDelete = (choose) => {
+    if (choose) {
+      api.deleteProject(getIdProject.current);
+      handleDialog("", false);
+      navigate("/mytasks");
+    }
+    handleDialog("", false);
+  };
 
   return (
     <aside className="min-h-screen w-1/5 bg-darkerBlue text-white0">
@@ -66,9 +90,9 @@ export const Sidebar = () => {
                     </span>
                   </li>
                 </Button>
-                <button onClick={() => handleDeleteProject(project.id)}>
+                <Button onClick={() => handleDeleteProject(project.id)}>
                   <FaTimes className="text-darkerBlue text-lg hover:text-red-400 ease-in-out duration-300" />
-                </button>
+                </Button>
               </div>
             );
           })}
@@ -85,12 +109,18 @@ export const Sidebar = () => {
             onCreate={() => setProjectModalIsVisible(false)}
           />
         </ul>
+        {dialog.isLoading && (
+          <ProjectDeleteModal
+            onDialog={confirmDelete}
+            message={dialog.message}
+          />
+        )}
       </div>
 
       <Button
         className="flex items-center gap-4 bg-gray2 rounded-lg pl-2 pt-3 pb-3 w-[80%] ml-6 mt-[125%]"
         onClick={() => navigate("/profile")}>
-        <div className="w-8 h-8 bg-blue0 rounded-full -mr-2 bg-gray0 text-white text-sm">
+        <div className="w-8 h-8 bg-blue0 rounded-full -mr-2 text-white text-sm">
           JD
         </div>
         <div className="grid">

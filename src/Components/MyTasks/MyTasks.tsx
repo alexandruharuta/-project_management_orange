@@ -20,8 +20,8 @@ const MyTasks = () => {
       <div className="flex items- mx-4 my-2 justify-center items-center">
         <input
           type="text"
-          placeholder="Search..."
-          className="py-2 pl-10 pr-4 rounded-full focus:outline-none focus:ring focus:border-blue-300 w-1/3 border text-center"
+          placeholder="Search"
+          className="py-2 rounded-full focus:outline-none focus:ring focus:border-blue-300 w-1/3 border-2 text-center"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
