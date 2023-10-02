@@ -2,13 +2,13 @@
 
 body {
   margin: 0;
-  background-color: #f24333;
 }
 
 section {
   position: relative;
   flex-direction: column;
   padding: 100px;
+  background-color: #f24333;
 }
 
 .custom-shape-divider-top-1696260648 {
