@@ -1,8 +1,8 @@
-import { Header } from "../Header/Header";
-import { Card } from "../Cards/Card";
-import { Footer } from "../Footer/Footer.tsx";
+import {Header} from "../Header/Header.tsx";
+import {Card} from "../Cards/Card.tsx";
+import {Footer} from "../Footer/Footer.tsx";
 
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export default function LandingPage(): JSX.Element {
   const navigate = useNavigate();
@@ -23,8 +23,7 @@ export default function LandingPage(): JSX.Element {
             </button>
             <button
               className="text-light-blue border border-light-blue rounded-full px-6 py-2"
-              onClick={() => navigate("/register")}
-            >
+              onClick={() => navigate("/register")}>
               Get Started
             </button>
           </div>
