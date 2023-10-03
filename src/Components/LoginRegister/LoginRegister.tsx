@@ -14,7 +14,7 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: any) => {
     e.preventDefault();
 
     setNameError("");
@@ -118,7 +118,9 @@ export default function Register() {
               )}
 
               {!test && (
-                <button className="italic text-sm my-4 flex items-center justify-end">
+                <button
+                  className="italic text-sm my-4 flex items-center justify-end"
+                  type="button">
                   Forgot password?
                 </button>
               )}
@@ -132,6 +134,7 @@ export default function Register() {
               <div className="flex w-full justify-center items-center mt-2">
                 {!test ? "Don't have an account?" : "Already own an account?"}
                 <button
+                  type="button"
                   className="ml-2 font-bold text-black hover:text-white ease-in-out duration-300"
                   onClick={() => setTest(!test)}>
                   {!test ? "Register" : "Login"}
