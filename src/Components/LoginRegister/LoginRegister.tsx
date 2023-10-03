@@ -11,7 +11,6 @@ export default function Register() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
-
   const navigate = useNavigate();
 
   const handleFormSubmit = (e: any) => {
@@ -119,7 +118,7 @@ export default function Register() {
 
               {!test && (
                 <button
-                  className="italic text-sm my-4 flex items-center justify-end"
+                  className="italic text-base my-4 text-black flex items-center justify-end hover:text-white ease-in-out duration-300 ml-auto"
                   type="button">
                   Forgot password?
                 </button>
