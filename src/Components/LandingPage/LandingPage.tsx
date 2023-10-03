@@ -30,8 +30,13 @@ export default function LandingPage(): JSX.Element {
         </div>
       </div>
       <div className="flex gap-2">
-        <Card className="flex-1" />
-        <Card className="flex-2" />
+        <Card className="flex-1">
+          <img src="/images/landing1.png" alt=""/>
+          </Card>
+        
+        <Card className="flex-2">
+        <img className="" src="/images/landing2.webp" alt=""/>
+          </Card>
       </div>
       <Card className="p-12 flex">
         <div className="flex flex-col justify-between items-center flex-1">
@@ -61,10 +66,14 @@ export default function LandingPage(): JSX.Element {
             instructions related to the task
           </span>
         </div>
-        <div className="flex-2"></div>
+        <div className="flex-2 ml-36"> 
+        <img  className=" h-3/4" src="/images/landing3.png" alt=""/>
+        </div>
       </div>
       <div className="flex">
-        <div className="flex-2"></div>
+        <div className="flex-2">
+        <img className="rounded-lg h-3/4 w-fit" src="/images/landing4.png" />
+        </div>
         <div className="flex flex-col gap-2 flex-1">
           <button className="text-light-blue border border-light-blue rounded-full px-6 py-2 w-fit">
             FEATURED
