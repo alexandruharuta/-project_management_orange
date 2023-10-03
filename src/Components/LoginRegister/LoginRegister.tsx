@@ -36,7 +36,6 @@ export default function Register() {
       setConfirmPasswordError("Passwords do not match");
       return;
     }
-
     navigate("/mytasks/");
   };
 
@@ -119,16 +118,17 @@ export default function Register() {
               )}
 
               {!test && (
-                <button className="italic text-sm mt-2 flex items-center justify-end">
+                <button className="italic text-sm my-4 flex items-center justify-end">
                   Forgot password?
                 </button>
               )}
 
               <button
-                className="bg-gradient-to-r from-violet-950 to-gray-700 rounded-full mt-4 pt-2 pb-2 font-semibold text-gray-200 hover:text-white"
+                className="bg-gradient-to-r from-violet-950 to-gray-700 rounded-full my-4 pt-2 pb-2 font-semibold text-gray-200 hover:text-white"
                 type="submit">
                 {test ? "Sign Up" : "Log In"}
               </button>
+
               <div className="flex w-full justify-center items-center mt-2">
                 {!test ? "Don't have an account?" : "Already own an account?"}
                 <button
