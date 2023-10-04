@@ -1,77 +1,62 @@
+import {useEffect, useState} from "react";
+import api from "../../api/mockApi";
+import {FaTimes} from "react-icons/fa";
+import {useNavigate} from "react-router-dom";
+import {BiSolidBookmark} from "react-icons/bi";
+
 const HomePage = () => {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    (async () => {
+      setProjects(await api.getAllProjects());
+    })();
+  }, []);
+
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <div className="w-80 h-44 rounded-lg mt-10 ml-10 bg-light-gray">
-        <div className="grid ml-4 pt-5">
-          <p>Illustration for Hero Section</p>
-          <p className="text-sm mt-2">High</p>
-          <div className="mt-5">
-            <p className="text-xs">40%</p>
-            <div>
-              <div className="w-40 h-2 rounded-full border border-gray0"></div>
-              <div className="w-20 h-2 -mt-2 rounded-full bg-gray0"></div>
-            </div>
+    <div className="flex justify-around items-center mt-32">
+      <div className="flex space-y-3 flex-col text-2xl bg-slate-300 rounded-3xl px-20 py-14">
+        <h1 className="font-bold">Active Projects:</h1>
+        {projects.map((project) => (
+          <div
+            className="flex items-center rounded-full text-white pr-2 bg-darkBlueHover/50 hover:bg-darkBlueHover ease-in-out duration-300"
+            key={project.id}>
+            <button
+              className="w-full"
+              onClick={() => navigate("/project/" + project.id)}>
+              <li className="flex items-center px-3 py-1 w-full">
+                <BiSolidBookmark className="mx-1 text-blue-400" />
+                <span className="flex items-center justify-between">
+                  {project.name}
+                </span>
+              </li>
+            </button>
           </div>
-          <div className="flex justify-between mr-5 mt-5 text-sm">
-            <p>Jun 18-Jun 25</p>
-            <div className="ml-16 flex items-center ">
-              <button className="w-5 h-5 bg-blue0 rounded-full -mr-2 bg-gray0 text-white text-xs ">
-                N
-              </button>
-              <button className="w-5 h-5 bg-blue0 rounded-full  bg-yellow0 text-white text-xs">
-                F
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-      <div className="w-80 h-44 rounded-lg mt-10 ml-10 bg-light-gray">
-        <div className="grid ml-4 pt-5">
-          <p>Illustration for Hero Section</p>
-          <p className="text-sm mt-2">High</p>
-          <div className="mt-5">
-            <p className="text-xs">40%</p>
-            <div>
-              <div className="w-40 h-2 rounded-full border border-gray0"></div>
-              <div className="w-20 h-2 -mt-2 rounded-full bg-gray0"></div>
-            </div>
+      <div className="flex space-y-3 flex-col text-2xl bg-slate-300 rounded-3xl px-20 py-14">
+        <h1 className="font-bold">Active Tasks:</h1>
+        {projects.map((project) => (
+          <div className="space-y-1">
+            {project.tasks.map((task: any) => (
+              <div
+                className="flex items-center rounded-full text-white pr-2 bg-darkBlueHover/50 hover:bg-darkBlueHover ease-in-out duration-300"
+                key={task.id}>
+                <button
+                  className="w-full"
+                  onClick={() => navigate("/project/" + project.id)}>
+                  <li className="flex items-center px-3 py-1 w-full">
+                    <BiSolidBookmark className="mx-1 text-red-400" />
+                    <span className="flex items-center justify-between">
+                      {task.taskName}
+                    </span>
+                  </li>
+                </button>
+              </div>
+            ))}
           </div>
-          <div className="flex justify-between mr-5 mt-5 text-sm">
-            <p>Jun 18-Jun 25</p>
-            <div className="ml-16 flex items-center ">
-              <button className="w-5 h-5 bg-blue0 rounded-full -mr-2 bg-gray0 text-white text-xs ">
-                N
-              </button>
-              <button className="w-5 h-5 bg-blue0 rounded-full  bg-yellow0 text-white text-xs">
-                F
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="w-80 h-44 rounded-lg mt-10 ml-10 bg-light-gray">
-        <div className="grid ml-4 pt-5">
-          <p>Illustration for Hero Section</p>
-          <p className="text-sm mt-2">High</p>
-          <div className="mt-5">
-            <p className="text-xs">40%</p>
-            <div>
-              <div className="w-40 h-2 rounded-full border border-gray0"></div>
-              <div className="w-20 h-2 -mt-2 rounded-full bg-gray0"></div>
-            </div>
-          </div>
-          <div className="flex justify-between mr-5 mt-5 text-sm">
-            <p>Jun 18-Jun 25</p>
-            <div className="ml-16 flex items-center ">
-              <button className="w-5 h-5 bg-blue0 rounded-full -mr-2 bg-gray0 text-white text-xs ">
-                N
-              </button>
-              <button className="w-5 h-5 bg-blue0 rounded-full  bg-yellow0 text-white text-xs">
-                F
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

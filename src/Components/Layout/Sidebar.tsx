@@ -112,7 +112,7 @@ export const Sidebar = () => {
         {dialog.isLoading && (
           <DeleteModal onDialog={confirmDelete} message={dialog.message} />
         )}
-      </div> 
+      </div>
 
       <Button
         className="flex items-center gap-4 bg-gray2 rounded-lg pl-2 pt-3 pb-3 w-[80%] ml-6 mt-[125%]"

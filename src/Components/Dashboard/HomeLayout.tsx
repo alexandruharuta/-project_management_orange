@@ -1,5 +1,5 @@
 import Navbar from "../Layout/Navbar";
-import { Sidebar } from "../Layout/Sidebar";
+import {Sidebar} from "../Layout/Sidebar";
 import HomePage from "./HomePage";
 
 const HomeLayout = () => {

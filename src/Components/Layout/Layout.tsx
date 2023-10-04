@@ -5,7 +5,7 @@ import {useParams} from "react-router-dom";
 
 export default function Layout() {
   const projectId = +(useParams().id || "0");
-  
+
   return (
     <>
       <div className="flex items-start">

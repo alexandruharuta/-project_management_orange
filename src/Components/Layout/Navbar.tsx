@@ -1,14 +1,17 @@
 import {useEffect, useState} from "react";
 import Button from "../Button";
-import {useNavigate, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {IProject} from "../../api/interfaces/IProject";
 import api from "../../api/mockApi";
 import {AiOutlineFundProjectionScreen} from "react-icons/ai";
+import {RiHome2Fill} from "react-icons/ri";
+import {FaListAlt} from "react-icons/fa";
 
 const Navbar = () => {
   const {id} = useParams();
   const [projectData, setProjectData] = useState<IProject | undefined>();
   const [isShown, setIsShown] = useState(false);
+  const loc = useLocation();
 
   useEffect(() => {
     (async () => {
@@ -29,6 +32,18 @@ const Navbar = () => {
     <div className="flex justify-between border-b border-dark10 w-full h-16 px-4">
       <div className="flex items-center">
         <p className="flex items-center">
+          {loc.pathname === "/home" && (
+            <h1 className="flex items-center text-lg font-bold text-gray-800">
+              <RiHome2Fill className="mr-2" />
+              Home Page
+            </h1>
+          )}
+          {loc.pathname === "/mytasks" && (
+            <h1 className="flex items-center text-lg font-bold text-gray-800">
+              <FaListAlt className="mr-2" />
+              My Tasks
+            </h1>
+          )}
           {projectData?.name && (
             <AiOutlineFundProjectionScreen className="mr-2 text-2xl text-indigo-600" />
           )}
